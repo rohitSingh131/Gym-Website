@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --main-color: #0000ff;
+  --main-color: #3f8351;
   --text-color: #fff;
   --light-text-color: #aaa;
   --black-color: #000;
   --light-black: #121111;
+  --nav-color: #fff;
 
   --fw3: 300;
   --fw4: 400;
@@ -92,20 +93,24 @@ nav {
   z-index: 10000;
 }
 nav.sticky {
-  background: var(--light-text-color);
+  background: var(--nav-color);
   transition: 0.5s;
 }
 .logo {
+  display: flex;
+  color: var(--main-color);
   position: relative;
-  width: 4rem;
-  margin: 1rem;
+  font-size: 4rem;
+  font-weight: var(--fw7);
   left: 2%;
+}
+.logo span{
+  color: var(--main-color);
+  font-size: 2rem;
+  font-weight: var(--fw6);
 }
 nav.sticky .logo {
   width: 4rem;
-  top: 0;
-}
-nav.sticky ul {
   top: 0;
 }
 nav ul {
@@ -167,7 +172,7 @@ nav ul li a.active::after {
   min-height: 92vh;
   margin: auto;
   bottom: 0;
-  background-image: url(./assets/cover2.jpg);
+  background-image: url(./assets/cover.jpg);
   background-size: cover !important;
   background-position: center !important;
 }
@@ -314,9 +319,110 @@ nav ul li a.active::after {
   color: var(--main-color);
 }
 
+/* features section */
+
+.features h1{
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: var(--fw6);
+  color: var(--main-color);
+}
+.features h1::before{
+  content: '';
+  display: block;
+  width: 35%;
+  height: .2rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: var(--main-color);
+  overflow-x: hidden;
+}
+.features h1::after{
+  content: '';
+  display: block;
+  width: 35%;
+  height: .2rem;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background: var(--main-color);
+  overflow-x: hidden;
+}
+.features-item{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.features-card {
+  position: relative;
+  max-width: 54rem;
+  height: 36rem;
+  padding: 2rem;
+  box-shadow: 0 .5rem 20.2rem rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  align-items: center;
+  margin: 1rem .6rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: .1rem solid  var(--main-color);
+}
+.features-card:hover{
+  height: 42rem;
+}
+.features-card .features-img{
+  position: relative;
+  flex: 1;
+  max-width: 50rem;
+  margin: auto;
+  box-shadow: 0 .5rem 2rem rgba(0, 0, 0,0.2);
+  border: var(--main-color);
+}
+.features-card .features-img img{
+  max-width: 100%;
+}
+.features-card:hover .features-img img{
+  transform: scale(0.9);
+  transition: all .5s ease-in-out;
+}
+.features-card .features-img h3{
+  color: var(--text-color);
+  font-size: 3rem;
+  font-weight: var(--fw4);
+}
+.features-card .features-text{
+  position: relative;
+  padding: .1rem 1.5rem;
+  text-align: center;
+  color: var(--text-color);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.features-card:hover .features-text{
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+.features-card .features-text p{
+  color: var(--light-text-color);
+  font-size: 1.6rem;
+  font-weight: var(--fw3);
+}
+
+
 /* media Query */
 
 @media only screen and (min-width: 999px) and (max-width: 1179px) {
+  nav ul{
+    right: -4.2rem;
+  }
   .container {
     width: 90%;
     min-height: 70vh;
@@ -324,17 +430,30 @@ nav ul li a.active::after {
   .container .row {
     width: 100%;
   }
+
   .container .row .home-text {
     left: 2rem;
   }
   .logo {
-    width: 4rem;
     left: 1rem;
   }
   nav.sticky .logo {
     width: 4rem;
     left: 1rem;
   }
+  .features h1::before,
+  .features h1::after{
+    width: 32%;
+  }
+  .features-card{
+    height: 21rem;
+    flex-basis: 30%;
+    flex-direction: column;
+  }
+  .features-card:hover{
+    height: 35rem;
+  }
+
 }
 
 @media only screen and (min-width: 787px) and (max-width: 998px) {
@@ -368,10 +487,10 @@ nav ul li a.active::after {
   .navItems {
     position: fixed;
     left: -100%;
-    top: 0;
-    gap: 2rem;
+    top: 5.7rem;
+    padding-bottom: 12rem;
     flex-direction: column;
-    background-color: var(--light-text-color);
+    background-color: var(--nav-color);
     width: 20rem;
     height: 100vh;
     transition: 0.3s;
@@ -398,12 +517,14 @@ nav ul li a.active::after {
     width: 37rem;
   }
   .logo {
-    width: 4rem;
     left: -3rem;
   }
   nav.sticky .logo {
-    width: 4rem;
     left: -3rem;
+  }
+  .features h1::before,
+  .features h1::after{
+    width: 30%;
   }
 }
 
@@ -438,10 +559,10 @@ nav ul li a.active::after {
   .navItems {
     position: fixed;
     left: -100%;
-    top: 0;
-    gap: 2rem;
+    top: 5.7rem;
+    padding-bottom: 12rem;
     flex-direction: column;
-    background-color: var(--light-text-color);
+    background-color: var(--nav-color);
     width: 18rem;
     height: 100vh;
     transition: 0.3s;
@@ -482,12 +603,14 @@ nav ul li a.active::after {
     font-weight: var(--fw4);
   }
   .logo {
-    width: 4rem;
-    left: -4rem;
+    left: -3rem;
   }
   nav.sticky .logo {
-    width: 4rem;
-    left: -4rem;
+    left: -3rem;
+  }
+  .features h1::before,
+  .features h1::after{
+    width: 23%;
   }
 }
 @media only screen and (min-width: 200px) and (max-width: 567px) {
@@ -521,10 +644,10 @@ nav ul li a.active::after {
   .navItems {
     position: fixed;
     left: -100%;
-    top: 0;
-    gap: 2rem;
+    top: 5.7rem;
+    padding-bottom: 12rem;
     flex-direction: column;
-    background-color: var(--light-text-color);
+    background-color: var(--nav-color);
     width: 18rem;
     height: 100vh;
     transition: 0.3s;
@@ -569,11 +692,13 @@ nav ul li a.active::after {
     padding: 1rem 0 0 0;
   }
   .logo {
-    width: 4rem;
-    left: -5rem;
+    left: -4rem;
   }
   nav.sticky .logo {
-    width: 4rem;
-    left: -5rem;
+    left: -4rem;
+  }
+  .features h1::before,
+  .features h1::after{
+    width: 14%;
   }
 }
