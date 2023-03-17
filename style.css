@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --main-color: #3f8351;
+  --main-color: #fa6e07;
   --text-color: #fff;
   --light-text-color: #aaa;
   --black-color: #000;
   --light-black: #121111;
   --nav-color: #fff;
+  --dark-main: #714b00;
+  --card-color: #0d1d1a;
+  --star-color: #ff9900;
 
   --fw3: 300;
   --fw4: 400;
@@ -104,7 +107,7 @@ nav.sticky {
   font-weight: var(--fw7);
   left: 2%;
 }
-.logo span{
+.logo span {
   color: var(--main-color);
   font-size: 2rem;
   font-weight: var(--fw6);
@@ -321,7 +324,7 @@ nav ul li a.active::after {
 
 /* features section */
 
-.features h1{
+.features h1 {
   position: relative;
   justify-content: center;
   text-align: center;
@@ -329,29 +332,29 @@ nav ul li a.active::after {
   font-weight: var(--fw6);
   color: var(--main-color);
 }
-.features h1::before{
-  content: '';
+.features h1::before {
+  content: "";
   display: block;
   width: 35%;
-  height: .2rem;
+  height: 0.2rem;
   position: absolute;
   top: 50%;
   left: 0;
   background: var(--main-color);
   overflow-x: hidden;
 }
-.features h1::after{
-  content: '';
+.features h1::after {
+  content: "";
   display: block;
   width: 35%;
-  height: .2rem;
+  height: 0.2rem;
   position: absolute;
   top: 50%;
   right: 0;
   background: var(--main-color);
   overflow-x: hidden;
 }
-.features-item{
+.features-item {
   display: flex;
   position: relative;
   justify-content: center;
@@ -363,64 +366,295 @@ nav ul li a.active::after {
   max-width: 54rem;
   height: 36rem;
   padding: 2rem;
-  box-shadow: 0 .5rem 20.2rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.5rem 20.2rem rgba(0, 0, 0, 0.5);
   transition: 0.3s ease-in-out;
   align-items: center;
-  margin: 1rem .6rem;
+  margin: 1rem 0.6rem;
   align-items: center;
   text-align: center;
   justify-content: center;
   flex-wrap: wrap;
-  border: .1rem solid  var(--main-color);
+  border: 0.1rem solid var(--main-color);
 }
-.features-card:hover{
+.features-card:hover {
   height: 42rem;
 }
-.features-card .features-img{
+.features-card .features-img {
   position: relative;
   flex: 1;
   max-width: 50rem;
   margin: auto;
-  box-shadow: 0 .5rem 2rem rgba(0, 0, 0,0.2);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
   border: var(--main-color);
 }
-.features-card .features-img img{
+.features-card .features-img img {
   max-width: 100%;
 }
-.features-card:hover .features-img img{
+.features-card:hover .features-img img {
   transform: scale(0.9);
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-.features-card .features-img h3{
+.features-card .features-img h3 {
   color: var(--text-color);
   font-size: 3rem;
   font-weight: var(--fw4);
 }
-.features-card .features-text{
+.features-card .features-text {
   position: relative;
-  padding: .1rem 1.5rem;
+  padding: 0.1rem 1.5rem;
   text-align: center;
   color: var(--text-color);
   visibility: hidden;
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
-.features-card:hover .features-text{
+.features-card:hover .features-text {
   visibility: visible;
   opacity: 1;
   transition-delay: 0.3s;
 }
-.features-card .features-text p{
+.features-card .features-text p {
   color: var(--light-text-color);
   font-size: 1.6rem;
   font-weight: var(--fw3);
 }
 
+/* price section  */
+.price {
+  position: relative;
+}
+.price h1 {
+  color: var(--main-color);
+  justify-content: center;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: var(--fw7);
+}
+.price h1::before {
+  content: "";
+  display: block;
+  width: 35%;
+  height: 0.2rem;
+  position: absolute;
+  top: 10%;
+  left: 12rem;
+  background: var(--main-color);
+  overflow-x: hidden;
+}
+.price h1::after {
+  content: "";
+  display: block;
+  width: 35%;
+  height: 0.2rem;
+  position: absolute;
+  top: 10%;
+  right: 12rem;
+  background: var(--main-color);
+  overflow-x: hidden;
+}
+.price h2 {
+  color: var(--text-color);
+  justify-content: center;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: var(--fw6);
+}
+.price-container {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+.price-card {
+  flex-wrap: wrap;
+  position: relative;
+  width: 32rem;
+  height: 50rem;
+  margin: 1rem;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--card-color);
+  box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.3),
+    -0.2rem -0.2rem 0.5rem rgba(48, 44, 16, 0.616);
+  border-bottom-right-radius: 4rem;
+  cursor: pointer;
+}
+.price-card:hover {
+  border: 0.1rem solid var(--main-color);
+  transform: scale(1.1);
+  background: transparent;
+}
+.price-container .price-card.standart {
+  background: transparent;
+  border: 0.1rem solid var(--main-color);
+}
+.price-container .price-card.standart:hover {
+  background: var(--card-color);
+  border: transparent;
+}
+.price-container .price-card.standart h2 {
+  color: var(--text-color);
+}
+.price-container .price-card.standart:hover h2 {
+  color: var(--main-color);
+}
+.price-container .price-card.standart a.btn {
+  background: var(--text-color);
+  color: var(--main-color);
+}
+.price-container .price-card.standart:hover a.btn {
+  background: var(--main-color);
+  color: var(--text-color);
+}
+.price-container .price-card.standart h3 {
+  color: var(--main-color);
+  background: var(--text-color);
+}
+.price-container .price-card.standart:hover h3 {
+  color: var(--text-color);
+  background: var(--main-color);
+}
+.price-container .price-card.standart p i {
+  color: var(--light-text-color);
+}
+.price-container .price-card.standart:hover p i {
+  color: var(--main-color);
+}
+.ribbon {
+  height: 15rem;
+  width: 15rem;
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  overflow: hidden;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  display: block;
+  border: 0.59rem solid var(--dark-main);
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon::before {
+  top: 0;
+  left: 4rem;
+}
+.ribbon::after {
+  bottom: 4rem;
+  right: 0;
+}
+.ribbon span {
+  position: absolute;
+  background: var(--main-color);
+  width: 20rem;
+  padding: 0.2rem 0 0.2rem 2rem;
+  color: var(--text-color);
+  top: 2rem;
+  right: -5rem;
+  text-align: center;
+
+  font-size: 2rem;
+  transform: rotate(45deg);
+}
+
+.price-card h4 {
+  color: var(--light-text-color);
+  position: absolute;
+  font-size: 32rem;
+  top: 6rem;
+  right: 0;
+  opacity: 0.1;
+}
+.price-card:hover h2 {
+  color: var(--text-color);
+}
+.price-card .star {
+  position: relative;
+  font-size: 3rem;
+  left: -1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.price-card .star .star-3 i {
+  color: var(--star-color);
+}
+.price-card.standart .star .star-2 i,
+.price-card.standart .star .star-3 i {
+  color: var(--star-color);
+}
+.price-card.premium .star .star-1 i,
+.price-card.premium .star .star-2 i,
+.price-card.premium .star .star-3 i {
+  color: var(--star-color);
+}
+.price-card .circle {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  z-index: 1;
+  width: 100%;
+  clip-path: polygon(100% 0, 0 0, 0 85%, 50% 100%, 100% 85%);
+  background: var(--main-color);
+  height: 20rem;
+  opacity: 0.2;
+}
+.price-card:hover p i {
+  color: var(--light-text-color);
+}
+.price-card:hover a.btn {
+  background-color: var(--text-color);
+  color: var(--main-color);
+}
+.price-card h3 {
+  text-align: center;
+  align-items: center;
+  color: var(--text-color);
+  background: var(--main-color);
+  font-size: 3rem;
+  font-weight: var(--fw5);
+}
+.price-card:hover h3 {
+  color: var(--main-color);
+  background: var(--text-color);
+}
+.price-card h2 {
+  text-align: center;
+  align-items: center;
+  color: var(--main-color);
+  font-size: 10rem;
+  margin: -2rem 0;
+  font-weight: var(--fw7);
+}
+.price-card h2 span {
+  margin-left: -2.5rem;
+  font-size: 2.6rem;
+  font-weight: var(--fw3);
+}
+.price-card p {
+  color: var(--light-text-color);
+  font-size: 1.6rem;
+  padding-top: 0.7rem;
+  align-items: center;
+  padding-left: 4rem;
+}
+.price-card p i {
+  color: var(--main-color);
+}
+.price-card a.btn {
+  position: absolute;
+  bottom: 2rem;
+  left: 27%;
+}
 
 /* media Query */
 
 @media only screen and (min-width: 999px) and (max-width: 1179px) {
-  nav ul{
+  nav ul {
     right: -4.2rem;
   }
   .container {
@@ -442,18 +676,31 @@ nav ul li a.active::after {
     left: 1rem;
   }
   .features h1::before,
-  .features h1::after{
+  .features h1::after {
     width: 32%;
   }
-  .features-card{
+  .features-card {
     height: 21rem;
     flex-basis: 30%;
     flex-direction: column;
   }
-  .features-card:hover{
+  .features-card:hover {
     height: 35rem;
   }
 
+  .price-card {
+    flex-direction: column;
+  }
+  .price h1::before {
+    width: 30%;
+    top: 6.5%;
+    left: 13rem;
+  }
+  .price h1::after {
+    width: 30%;
+    top: 6.5%;
+    right: 13rem;
+  }
 }
 
 @media only screen and (min-width: 787px) and (max-width: 998px) {
@@ -523,7 +770,7 @@ nav ul li a.active::after {
     left: -3rem;
   }
   .features h1::before,
-  .features h1::after{
+  .features h1::after {
     width: 30%;
   }
 }
@@ -609,7 +856,7 @@ nav ul li a.active::after {
     left: -3rem;
   }
   .features h1::before,
-  .features h1::after{
+  .features h1::after {
     width: 23%;
   }
 }
@@ -698,7 +945,11 @@ nav ul li a.active::after {
     left: -4rem;
   }
   .features h1::before,
-  .features h1::after{
+  .features h1::after {
     width: 14%;
+  }
+
+  .price-card {
+    height: 55.5rem;
   }
 }
