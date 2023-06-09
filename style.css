@@ -485,6 +485,7 @@ nav ul li a.active::after {
   transform: scale(1.1);
   background: transparent;
 }
+
 .price-container .price-card.standart {
   background: transparent;
   border: 0.1rem solid var(--main-color);
@@ -649,6 +650,58 @@ nav ul li a.active::after {
   position: absolute;
   bottom: 2rem;
   left: 27%;
+}
+
+/* offer section */
+
+section .container-offer{
+  text-align: center;
+}
+section .container-offer span:first-child {
+  font-size: 10em;
+  color: #ccc;
+  text-shadow: 8px 10px 1px rgba(0, 0, 0,1);
+}
+section .container-offer span:last-child{
+  font-size: 5em;
+  text-shadow: 8px 10px 1px rgba(0, 0, 0, 1);
+  color: #ccc;
+}
+.custom-shape-divider-bottom-1679081639 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1679081639 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 190px;
+}
+
+.custom-shape-divider-bottom-1679081639 .shape-fill {
+  fill: var(--black-color);
+}
+
+.container-offer h3{
+  color: var(--text-color);
+  font-size: 2em;
+}
+.container-offer h2{
+  color: var(--text-color);
+  text-transform: uppercase;
+  font-size: 4em;
+  margin-top: -1.4em;
+  margin-bottom: .2em;
+  font-weight: var(--fw7);
+}
+.container-offer p{
+  font-size: 2.2rem;
+  font-weight: var(--fw6);
 }
 
 /* media Query */
